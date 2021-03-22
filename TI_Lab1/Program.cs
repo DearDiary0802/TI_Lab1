@@ -245,6 +245,10 @@ namespace TI_Lab1
             string Result = "";
             int i, j, k, Ind = 0;
             char[,] CipherMatrix = new char[5, 5];
+
+            while (CipherText.Length % 25 != 0)
+                CipherText += " ";
+
             int NumOfBlocks = CipherText.Length / 25;
 
             for (k = 0; k < NumOfBlocks; k++)
@@ -455,7 +459,7 @@ namespace TI_Lab1
                                 for (int j = 0; j < 5; j++)
                                     if (CheckingMatrix[i, j] == false)
                                         IsOK = false;
-                        } while (!IsOK);
+                        } while (IsOK);
 
                         if (crypt == 1)
                         {
